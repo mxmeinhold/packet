@@ -16,7 +16,7 @@
 			"port": 5432,
 			"database": "postgres",
 			"username": "postgres",
-			"password": "postgres"
+			"password": "mysecretpassword"
 		}],
 		"python.pythonPath": "/usr/local/bin/python",
 		"python.linting.enabled": true,
