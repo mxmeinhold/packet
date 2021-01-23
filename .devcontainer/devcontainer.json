@@ -48,7 +48,6 @@
 
 	// Use 'postCreateCommand' to run commands after the container is created.
   "postCreateCommand": [
-    "pip install --user -r requirements.txt;",
     "yarn install;",
     "npm install -g gulp && gulp production;",
     "flask db upgrade;"
