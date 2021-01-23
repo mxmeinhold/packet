@@ -14,6 +14,7 @@ services:
         # On Linux, you may need to update USER_UID and USER_GID below if not your local UID is not 1000.
         USER_UID: 1000
         USER_GID: 1000
+        USERNAME: "codespace"
 
     volumes:
       - ..:/workspace:cached
@@ -25,7 +26,7 @@ services:
     network_mode: service:db
 
     # Uncomment the next line to use a non-root user for all processes.
-    user: vscode
+    user: codespace
 
     # Use "forwardPorts" in **devcontainer.json** to forward an app port locally. 
     # (Adding the "ports" property to this file will not forward from a Codespace.)
