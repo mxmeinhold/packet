@@ -38,13 +38,13 @@
 		"ms-python.python",
 		"mtxr.sqltools",
 		"mtxr.sqltools-driver-pg"
-	]
+	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [5000, 5432],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "pip install --user -r requirements.txt",
+	"postCreateCommand": "pip install --user -r requirements.txt"
 
 	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
 	// "remoteUser": "vscode"
