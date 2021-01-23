@@ -4,6 +4,9 @@ FROM mcr.microsoft.com/vscode/devcontainers/python:${VARIANT}
 
 ENV PYTHONUNBUFFERED 1
 
+# Add LDAP and python dependency build deps
+RUN apt-get -yq --no-install-recommends install gcc curl libsasl2-dev libldap2-dev libssl-dev
+
 # Update args in docker-compose.yaml to set the UID/GID of the "vscode" user.
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
