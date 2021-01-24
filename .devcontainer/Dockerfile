@@ -1,16 +1,13 @@
 FROM mcr.microsoft.com/vscode/devcontainers/universal:1-linux
 
-# Add LDAP and python dependency build deps
 USER root
 
+# Add LDAP and python dependency build deps
 RUN apt-get update && \
     apt-get -yq --no-install-recommends install gcc curl libsasl2-dev libldap2-dev libssl-dev
 
-# [Option] Install Node.js
-ARG INSTALL_NODE="true"
+# Install node and gulp
 ARG NODE_VERSION="lts/*"
-RUN if [ "${INSTALL_NODE}" = "true" ]; then su codespace -c "source /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSION} 2>&1"; fi
-
-RUN npm install -g gulp
+RUN su codespace -c "nvm install ${NODE_VERSION} && nvm use ${NODE_VERSION} && npm install -g gulp"
 
 USER codespace
