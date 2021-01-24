@@ -52,8 +52,8 @@
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "oryx build" will automatically install your dependencies and attempt to build your project
   "postCreateCommand": [
-    "oryx build -p virtualenv_name=.venv || echo 'Could not auto-build. Skipping.';",
-    "nvm install && nvm use && npm install -g gulp && yarn install && gulp production;",
+    "pip install --progress-bar=off install -r requirements.txt;",
+    "$NVM_DIR/nvm.sh && nvm install && nvm use && npm install -g gulp && yarn install && gulp production;",
     "flask db upgrade;"
   ]
 }
