@@ -53,7 +53,7 @@
 	// "oryx build" will automatically install your dependencies and attempt to build your project
   "postCreateCommand": [
     "oryx build -p virtualenv_name=.venv || echo 'Could not auto-build. Skipping.';",
-    "yarn install && gulp production;",
+    "nvm install && nvm use && npm install -g gulp && yarn install && gulp production;",
     "flask db upgrade;"
-  ],
+  ]
 }
