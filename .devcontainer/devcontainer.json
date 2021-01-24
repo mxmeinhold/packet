@@ -53,7 +53,7 @@
 	// "oryx build" will automatically install your dependencies and attempt to build your project
   "postCreateCommand": [
     "pip install --progress-bar=off install -r requirements.txt;",
-    "source $NVM_DIR/nvm.sh && nvm install && nvm use && npm install -g gulp && yarn install && gulp production;",
+    "yarn install && `yarn bin gulp production`;",
     "/home/codespace/.local/bin/flask db upgrade;"
   ]
 }
